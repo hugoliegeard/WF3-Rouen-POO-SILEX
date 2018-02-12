@@ -53,6 +53,10 @@ class Ecole
         return $this->AdresseEcole;
     }
 
+    public function getClasses() {
+        return $this->Classes;
+    }
+
     /* ------------------------------------- Setters */
 
     /**

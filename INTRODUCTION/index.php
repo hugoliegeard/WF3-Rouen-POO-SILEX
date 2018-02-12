@@ -70,3 +70,39 @@ echo '</pre>';
 
 # Afficher mes Classes et leurs Eleves
 
+echo '<ol>';
+
+    # Parcourir les Classes
+    /**
+     * Je récupère toutes les classes
+     * de mon école.
+     */
+    $lesClasses = $Ecole->getClasses();
+    foreach ($lesClasses as $objClasse) {
+
+        echo '<li>';
+            echo $objClasse->getNomClasse();
+
+            echo '<ul>';
+
+                # On récupère les étudiants de la classe
+                $lesEtudiants = $objClasse->getEleves();
+                foreach ($lesEtudiants as $objEtudiant) {
+
+                    echo '<li>';
+                        echo $objEtudiant->getNomComplet();
+                    echo '</li>';
+
+                }
+
+            echo '</ul>';
+
+        echo '</li>';
+
+    }
+
+echo '</ol>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';

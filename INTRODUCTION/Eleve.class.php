@@ -68,7 +68,13 @@ class Eleve
         $this->AgeEleve = $AgeEleve;
     }
 
-
+    /**
+     * Retourne le Prénom + le Nom de l'élève
+     * @return string Prénom + Nom
+     */
+    public function getNomComplet() {
+        return $this->PrenomEleve. ' ' . $this->NomEleve;
+    }
 
 
 }
