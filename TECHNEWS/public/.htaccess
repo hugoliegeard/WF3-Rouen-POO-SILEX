@@ -1,0 +1,17 @@
+# http://stackoverflow.com/questions/24545272/beautify-url-with-controller-and-action-as-query-string
+# http://stackoverflow.com/questions/34529142/htaccess-pretty-url-shows-no-css-or-images-in-php-mvc?rq=1
+
+# Activation de la Réecriture des URLs
+RewriteEngine On
+
+# Exclusions
+RewriteCond ${REQUEST_URI} ^.+$
+RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g|png|js|css|swf|php|ico|txt|pdf|xml)$ [OR]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^ - [L]
+
+# Règles de Réecriture
+RewriteRule ^article/([0-9]+)-([^/]+)\.html index.php?controller=news&action=article&idarticle=$1 [QSA,L]
+RewriteRule ^([^/]+)/([^/]+) index.php?controller=$1&action=$2 [QSA,L]
