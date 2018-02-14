@@ -15,27 +15,31 @@
             <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                 <h3>NOS CATEGORIES</h3>
                 <ul class="list-category">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="business.html">Business</a></li>
-                    <li><a href="computing.html">Computing</a></li>
-                    <li><a href="tech.html">Tech</a></li>=
+                    <?php
+                    /**
+                    * https://stackoverflow.com/questions/12409915/php-casting-variable-as-object-type-in-foreach-loop
+                    * @var $categorie Categorie
+                    */
+                    foreach ($categories as $categorie) : ?>
+                        <li>
+                            <a href="<?= PATH_PUBLIC . '/' . $categorie->getROUTECATEGORIE() ?>">
+                                <?= $categorie->getLIBELLECATEGORIE() ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                 <h3>RECHERCHE PAR TAGS</h3>
 
                 <div class="list-tags">
-                    <a href="#">iPhone 7</a>
-                    <a href="#">News</a>
-                    <a href="#">Sport</a>
-                    <a href="#">Apple</a>
-                    <a href="#">Alcatel</a>
-                    <a href="#">Pixi 4</a>
-                    <a href="#">Elon Musk </a>
-                    <a href="#">Smart phone</a>
-                    <a href="#">Nexus</a>
-                    <a href="#">Canvas</a>
-
+                    <?php
+                    /**
+                     * @var $tag Tags
+                     */
+                    foreach ($tags as $tag) : ?>
+                        <a href="#"><?= $tag->getLIBELLETAGS() ?></a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

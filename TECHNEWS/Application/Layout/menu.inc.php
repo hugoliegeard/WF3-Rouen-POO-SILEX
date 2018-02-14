@@ -2,10 +2,15 @@
 <nav class="menu-res hidden-lg hidden-md ">
     <div class="menu-res-inner">
         <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="business.html">BUSINESS</a></li>
-            <li><a href="computing.html"> COMPUTING</a></li>
-            <li><a href="tech.html">TECH</a></li>
+            <?php use Application\Model\Categorie\Categorie;
+
+            foreach ($categories as $categorie) : ?>
+                <li>
+                    <a href="<? PATH_PUBLIC . '/' . $categorie->getROUTECATEGORIE() ?>">
+                        <?= $categorie->getLIBELLECATEGORIE() ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </nav>
@@ -28,18 +33,18 @@
                 <span>MENU</span>
             </div>
             <ul class="hidden-sm hidden-xs">
-                <li>
-                    <a href="index.html">Accueil </a>
-                </li>
-                <li>
-                    <a href="business.html">Business</a>
-                </li>
-                <li>
-                    <a href="computing.html">Computing</a>
-                </li>
-                <li>
-                    <a href="tech.html">Tech </a>
-                </li>
+                <?php
+                    /**
+                     * https://stackoverflow.com/questions/12409915/php-casting-variable-as-object-type-in-foreach-loop
+                     * @var $categorie Categorie
+                     */
+                    foreach ($categories as $categorie) : ?>
+                        <li>
+                            <a href="<?= PATH_PUBLIC . '/' . $categorie->getROUTECATEGORIE() ?>">
+                                <?= $categorie->getLIBELLECATEGORIE() ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
             </ul>
             <div class="search-icon">
                 <div class="search-icon-inner">

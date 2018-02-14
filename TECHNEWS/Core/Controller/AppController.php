@@ -45,4 +45,19 @@ class AppController
         return $object;
     }
 
+    /**
+     * Permet de débugger les paramètres de la vue
+     * ou le paramètre passé à la fonction.
+     * @param array $params
+     */
+    public function debug(Array $params = []) {
+        if(empty($params)) :
+            $params = $this->_viewparams;
+        endif;
+
+        echo '<pre>';
+            print_r($params);
+        echo '</pre>';
+    }
+
 }
