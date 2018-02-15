@@ -7,9 +7,9 @@ class Autoloader {
     }
 
     public static function autoload($class) {
-        echo 'Autoload pour : ';
-            print_r($class);
-        echo '<br>';
+        # echo 'Autoload pour : ';
+        #     print_r($class);
+        # echo '<br>';
         $class  = str_replace('\\', DIRECTORY_SEPARATOR, $class);
         require PATH_ROOT . '/' . $class . '.php';
     }
