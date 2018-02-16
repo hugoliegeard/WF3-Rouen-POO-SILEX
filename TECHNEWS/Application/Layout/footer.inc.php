@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-4  col-sm-4 col-xs-12">
                 <div class="about">
-                    <a href="#" class="logo">
+                    <a href="<?= $this->generateUrl('news', 'index') ?>" class="logo">
                         <img alt="" src="<?= PATH_PUBLIC ?>/images/logo_footer.png" />
                     </a>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
@@ -22,7 +22,7 @@
                     */
                     foreach ($categories as $categorie) : ?>
                         <li>
-                            <a href="<?= PATH_PUBLIC . '/' . $categorie->getROUTECATEGORIE() ?>">
+                            <a href="<?= $this->generateUrl('news', strtolower($article->getCATEGORIEOBJ()->getLIBELLECATEGORIE())) ?>">
                                 <?= $categorie->getLIBELLECATEGORIE() ?>
                             </a>
                         </li>

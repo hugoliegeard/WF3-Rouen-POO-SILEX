@@ -2,7 +2,7 @@
 
 # Quelques constantes utiles
 define('PATH_ROOT', dirname(__DIR__));
-define('PATH_PUBLIC', '/FORMATION/WF3-ROUEN/POO/TECHNEWS/public');
+define('PATH_PUBLIC', dirname($_SERVER['SCRIPT_NAME']));
 define('PATH_APPLICATION', PATH_ROOT . '/Application');
 define('PATH_LAYOUT', PATH_APPLICATION . '/Layout');
 define('PATH_VIEWS', PATH_APPLICATION . '/Views');
